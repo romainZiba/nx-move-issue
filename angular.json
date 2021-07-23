@@ -9,7 +9,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/demo",
             "index": "apps/demo/src/index.html",
@@ -17,8 +19,13 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
+            ],
+            "styles": [
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +90,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/demo"],
+          "outputs": [
+            "coverage/apps/demo"
+          ],
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
@@ -112,7 +121,54 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/demo-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "domain-x-feature": {
+      "projectType": "library",
+      "root": "libs/domain-x-feature",
+      "sourceRoot": "libs/domain-x-feature/src",
+      "prefix": "dom",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": [
+            "dist/libs/domain-x-feature"
+          ],
+          "options": {
+            "project": "libs/domain-x-feature/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain-x-feature/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/domain-x-feature/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/domain-x-feature"
+          ],
+          "options": {
+            "jestConfig": "libs/domain-x-feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain-x-feature/src/**/*.ts",
+              "libs/domain-x-feature/src/**/*.html"
+            ]
           }
         }
       }
