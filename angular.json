@@ -130,24 +130,24 @@
     },
     "domain-x-feature": {
       "projectType": "library",
-      "root": "libs/domain-x-feature",
-      "sourceRoot": "libs/domain-x-feature/src",
+      "root": "libs/domain-x/feature",
+      "sourceRoot": "libs/domain-x/feature/src",
       "prefix": "dom",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
           "outputs": [
-            "dist/libs/domain-x-feature"
+            "dist/libs/domain-x/feature"
           ],
           "options": {
-            "project": "libs/domain-x-feature/ng-package.json"
+            "project": "libs/domain-x/feature/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/domain-x-feature/tsconfig.lib.prod.json"
+              "tsConfig": "libs/domain-x/feature/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "libs/domain-x-feature/tsconfig.lib.json"
+              "tsConfig": "libs/domain-x/feature/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -155,10 +155,10 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/libs/domain-x-feature"
+            "coverage/libs/domain-x/feature"
           ],
           "options": {
-            "jestConfig": "libs/domain-x-feature/jest.config.js",
+            "jestConfig": "libs/domain-x/feature/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -166,8 +166,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/domain-x-feature/src/**/*.ts",
-              "libs/domain-x-feature/src/**/*.html"
+              "libs/domain-x/feature/src/**/*.ts",
+              "libs/domain-x/feature/src/**/*.html"
             ]
           }
         }
